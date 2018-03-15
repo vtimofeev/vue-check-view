@@ -1,6 +1,6 @@
-# Check viewport plugin with SSR support and without dependencies (vue.js) [DEMO](https://vtimofeev.github.io/vue-check-view/index.html)
+# Check if element is in viewport. Vue.js 2 plugin with SSR support without dependencies. [DEMO](https://vtimofeev.github.io/vue-check-view/index.html)
 
-Simple plugin that checks element position on screen (viewport) and adds classes to element:
+Simple plugin that checks element position on the screen (viewport) and adds classes to element:
 
 1. In viewport classes: `view-in` and one of [`view-in--gt-half`, `view-in--gt-thrid`, `view-in--full`],
 2. Out viewport classes: `view-out` and one of [`view-out--below`, `view-out--above`]

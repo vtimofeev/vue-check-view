@@ -1,13 +1,18 @@
 {
   "name": "vue-check-view",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Simple vue plugin that checks element position on screen (viewport) and adds classes to element.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vtimofeev/vue-check-view.git"
+  },
   "keywords": [
     "vue",
+    "vue.js",
     "viewport",
     "screen",
     "element",
