@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Check viewport plugin with SSR support and without dependencies (vue.js)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.15/vue.min.js"></script>
+    <style>
+        body {
+            margin: 1em;
+            padding: 0;
+            background-color: #fff;
+            color: #333;
+        }
+        .item {
+            margin-top: 1rem;
+            border: 1px solid #333;
+            opacity: .2;
+            background-color: #eee;
+            height: 25vh;
+            transition: opacity 1s .1s, border 1s, background-color 1s;
+        }
+        .item.view-in--gt-half {
+            border: 1px solid blue;
+            opacity: .5;
+        }
+        .item.view-in--full {
+            opacity: 1;
+            background-color: #fff;
+            border: 1px solid #0f0;
+        }
+    </style>
+</head>
+<body>
+<h1>Scroll to view animations. Total 1001 items.</h1>
+<script type="text/x-template" id="item-template">
+    <div class="item" v-view="viewHandler" v-view.once>
+        Percents of this element ({{ index }}): type - {{ viewEvent.type }}, in view - {{ viewEvent.percentInView }}, top view - {{ viewEvent.percentTop }}, center - {{ viewEvent.percentCenter }}
+        <br/> Once datetime: {{ onceTime && onceTime.toISOString() }}
+    </div>
+</script>
+<div id="app">
+    <div class="item" v-view.once="v => v">
+        Once handler item element (e)
+    </div>
+    <item v-for="i in 1000" :index="i" :key="'item-' + i"></item>
+</div>
+<script src="../index.js"></script>
+<script src="index.js"></script>
+</body>
+</html>
