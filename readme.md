@@ -1,6 +1,4 @@
-# Check viewport plugin with SSR support and without dependencies (vue.js)
-
-[DEMO](https://vtimofeev.github.io/vue-check-view/index.html)
+# Check viewport plugin with SSR support and without dependencies (vue.js) [DEMO](https://vtimofeev.github.io/vue-check-view/index.html)
 
 Simple plugin that checks element position on screen (viewport) and adds classes to element:
 
