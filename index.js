@@ -16,7 +16,7 @@ function getPlugin () {
       Progress: 'progress'
     }
 
-  function throttle(handler, timeout = 0) {
+  function throttle (handler, timeout = 0) {
     if (!handler || typeof handler !== 'function') throw new Error('Throttle handler argument is not incorrect. Must be a function.')
     let timeoutTime = 0
     return function (e) {
@@ -28,21 +28,21 @@ function getPlugin () {
     }
   }
 
-  function roundPercent(v) {
+  function roundPercent (v) {
     return (v * 1000 | 0) / 1000
   }
 
-  function createInstance(Vue, options) {
+  function createInstance (Vue, options) {
+    options = Object.assign({throttleInterval: 16}, options) // 60fps
     const items = {},
-      scrollThrottledHandler = throttle(scrollHandler, 40)
-
+      scrollThrottledHandler = throttle(scrollHandler, options.throttleInterval)
     let scrollValue = window.pageYOffset,
       itemIndex = 0
 
     window.addEventListener('scroll', scrollThrottledHandler)
     window.addEventListener('resize', scrollThrottledHandler)
 
-    function scrollHandler(e) {
+    function scrollHandler (e) {
       let viewportTop = window.pageYOffset,
         viewportBottom = window.pageYOffset + window.document.documentElement.clientHeight,
         viewportHeight = window.document.documentElement.clientHeight,
@@ -51,7 +51,7 @@ function getPlugin () {
 
       scrollValue = viewportTop - scrollValue
 
-      function getInType(i) {
+      function getInType (i) {
         const rect = i.element.getBoundingClientRect(),
           elementTop = rect.top + viewportTop,
           elementBottom = elementTop + rect.height,
@@ -146,7 +146,8 @@ function getPlugin () {
           item = items[id] || {element: element, classes: {}, percent: -1, rect: {}}
 
         if (bind.modifiers && bind.modifiers.once) {
-          item.onceenter = bind.value || function () {}
+          item.onceenter = bind.value || function () {
+          }
         }
         else {
           item.persist = true
