@@ -12,21 +12,23 @@
             color: #fff;
         }
         .item {
-            color: #333;
+            color: #ccc;
             margin-top: 1rem;
             border: 1px solid #333;
             opacity: .2;
-            background-color: #eee;
+            background-color: #555;
             height: 25vh;
-            transition: opacity 1s .1s, border 1s, background-color 1s;
+            transition: opacity 1s .1s, border 1s, background-color 1s, color 1s .2s;
         }
         .item.view-in--gt-half {
+            color: #333;
             border: 1px solid blue;
             opacity: .5;
         }
         .item.view-in--full {
             opacity: 1;
             background-color: #fff;
+            color: #333;
             border: 1px solid #0f0;
         }
     </style>
@@ -47,5 +49,8 @@
 </div>
 <script src="../index.js"></script>
 <script src="index.js"></script>
+<script>
+    window.addEventListener('load', () => console.log('window::load', new Date()))
+</script>
 </body>
 </html>

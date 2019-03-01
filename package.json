@@ -1,7 +1,7 @@
 {
   "name": "vue-check-view",
-  "version": "0.2.4",
-  "description": "Simple vue plugin that checks element position on screen (viewport) and adds classes to element.",
+  "version": "0.3.0",
+  "description": "Simple vue plugin that checks element position on screen (viewport) and adds classes to element. ES5 supported.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

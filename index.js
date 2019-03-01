@@ -33,7 +33,7 @@ function getPlugin () {
     return (v * 1000 | 0) / 1000
   }
 
-  function objectAssign(obj, src) {
+  function objectAssign (obj, src) {
     for (var key in src) {
       if (src.hasOwnProperty(key)) obj[key] = src[key]
     }
@@ -41,7 +41,7 @@ function getPlugin () {
   }
 
   function createInstance (Vue, options) {
-    options = objectAssign({ throttleInterval: 16 }, options) // 60fps
+    options = objectAssign({throttleInterval: 16}, options) // 60fps
     var items = {},
       scrollThrottledHandler = throttle(scrollHandler, options.throttleInterval)
     var scrollValue = window.pageYOffset,
@@ -94,7 +94,7 @@ function getPlugin () {
 
         var eventType = (inViewChange && EventTypes.Enter) || (outViewChange && EventTypes.Exit) || EventTypes.Progress
 
-        Object.keys(classes).forEach(function(v) {
+        Object.keys(classes).forEach(function (v) {
           classes[v] = false
         })
 
@@ -130,13 +130,13 @@ function getPlugin () {
         })
 
         if (typeof i.handler === 'function') {
-          i.handler({ 
-            type: eventType, 
-            percentInView: percentInView, 
-            percentTop: percentTop, 
-            percentCenter: percentCenter, 
-            scrollPercent: scrollPercent, 
-            scrollValue: scrollValue, 
+          i.handler({
+            type: eventType,
+            percentInView: percentInView,
+            percentTop: percentTop,
+            percentCenter: percentCenter,
+            scrollPercent: scrollPercent,
+            scrollValue: scrollValue,
             target: i
           })
         }
